@@ -1,5 +1,8 @@
 name: getting-started-actions
-on: [push]
+on: 
+  push:
+    branches:
+      - node
 jobs:
   load-apps:
     runs-on: ubuntu-latest
