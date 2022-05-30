@@ -1,0 +1,19 @@
+name: getting-started-actions
+on: [push]
+jobs:
+  load-apps:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: action/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          version: '14'
+      - run: npm install -g bats
+      - run: npm bats -v
+  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deployment successful!"
+
+      
