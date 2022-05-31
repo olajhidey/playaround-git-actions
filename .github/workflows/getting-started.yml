@@ -40,7 +40,7 @@ jobs:
       - name: Print the result in the files
         shell: bash
         run: |
-          value = `cat output.log`
+          value=`cat output.log`
           echo The result is $value
 
 
