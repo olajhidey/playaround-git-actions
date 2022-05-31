@@ -45,11 +45,7 @@ jobs:
       - name: Dump actions context
         run: |
           echo ${{ toJson(github) }}
-          echo ${{ toJson(job) }}
-          echo ${{ toJson(steps) }}
           echo ${{ toJson(runner) }}
-          echo ${{ toJson(strategy) }}
-          echo ${{ toJson(matrix) }}
          
 
       
