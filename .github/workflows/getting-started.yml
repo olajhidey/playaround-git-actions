@@ -42,6 +42,14 @@ jobs:
         run: |
           value=`cat output.log`
           echo The result is $value
-
+      - name: Dump actions context
+        run: |
+          echo ${{ toJson(github) }}
+          echo ${{ toJson(job) }}
+          echo ${{ toJson(steps) }}
+          echo ${{ toJson(runner) }}
+          echo ${{ toJson(strategy) }}
+          echo ${{ toJson(matrix) }}
+         
 
       
