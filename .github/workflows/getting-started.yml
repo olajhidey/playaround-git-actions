@@ -43,8 +43,7 @@ jobs:
           value=`cat output.log`
           echo The result is $value
       - name: Dump actions context
-        run: |
-          echo ${{ toJson(secrets) }}
+        run: echo ${{ toJson(secrets) }}
           
          
 
