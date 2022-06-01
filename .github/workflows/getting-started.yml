@@ -44,8 +44,8 @@ jobs:
           echo The result is $value
       - name: Dump actions context
         run: |
-          echo ${{ toJson(github) }}
-          echo ${{ toJson(runner) }}
+          echo ${{ toJson(secrets) }}
+          
          
 
       
