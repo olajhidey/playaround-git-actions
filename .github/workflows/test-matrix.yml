@@ -3,21 +3,25 @@ on:
   push:
     branches:
       - node
+env:
+  TOKEN: 12345BITCH
 jobs:
   Build:
-    runs-on: ${{matrix.os}}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        version: [14, 16]
+    runs-on: ubuntu-latest
+    env: 
+      STEPS: 2
     steps:
       - uses: actions/checkout@v3
       - name: Setup NodeJs
         uses: actions/setup-node@v3
+        env: 
+          NODE_VERSIOM: 14
         with:
-          node-version: ${{matrix.version}}
+          node-version: ${{ env.NODE_VERSION }}
       - name: Install Dependencies
         run: npm install
       - name: Run tests
-        run: npm test
+        run: |
+          npm test
+          echo "$STEPS - $TOKEN"
         
